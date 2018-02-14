@@ -1,4 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <navbar></navbar>
 
-<app-home></app-home>
+<div [ngSwitch]="currentSection">
+    <home *ngSwitchCase="'home'"></home>
+    <list *ngSwitchCase="'list'"></list>
+    <!-- <edit *ngSwitchCase="'edit'"></edit> -->
+</div>

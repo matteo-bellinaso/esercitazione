@@ -1,9 +1,3 @@
 <div id="navbar">
-
-    <ul>
-        <li class="home">Modifica</li>
-        <li class="lista">Lista</li>
-        <li class="modifica">Home</li>
-    </ul>
-
+    <div class="menu_voci" *ngFor="let item of menuItems" (click)="selectSection(item.id)" [class.selected]="item.selected">{{item.description}}</div>
 </div>

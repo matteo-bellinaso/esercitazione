@@ -6,17 +6,13 @@
     font-size: 150%;
 }
 
-.home,
-.lista,
-.modifica {
+.menu_voci {
     float: right;
     list-style-type: none;
     margin-right: 5%;
     line-height: 90px;
 }
 
-.home,
-.lista,
-.modifica:hover {
+.menu_voci:hover {
     cursor: pointer;
 }

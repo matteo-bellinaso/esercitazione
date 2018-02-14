@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ComunicatorService } from './comunicator.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  currentSection  = 'home';
+
+  constructor(private headerService: ComunicatorService){
+    this.headerService.sectionSelected$.subscribe(id=>{
+      this.currentSection = id;
+    });
+  }
 
 }
