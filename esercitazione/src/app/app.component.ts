@@ -15,4 +15,4 @@ export class AppComponent {
     });
   }
 
-}
+}//che bordello
