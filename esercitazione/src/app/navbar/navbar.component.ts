@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {menuItem} from '../menuItem';
 import { ComunicatorService } from '../comunicator.service';
 
-
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
@@ -16,15 +15,11 @@ export class NavbarComponent implements OnInit {
     new menuItem("home", 'Home')
   ];
 
-
   constructor(private comunicatorService : ComunicatorService) { }
 
   ngOnInit() {
   }
-
-
-  
-
+  //modifica
   selectSection(id:string){
 
     this.menuItems.forEach(item => {
