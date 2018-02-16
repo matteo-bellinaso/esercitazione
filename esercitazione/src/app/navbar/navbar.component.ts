@@ -3,6 +3,7 @@ import {menuItem} from '../menuItem';
 import { ComunicatorService } from '../comunicator.service';
 import { Subject } from 'rxjs/Subject';
 
+//GRegreg
 
 @Component({
   selector: 'navbar',
