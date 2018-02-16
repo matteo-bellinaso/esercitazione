@@ -1,7 +1,9 @@
-<div *ngFor="let item of items; let i=index">
+<div class="gioco" *ngFor="let item of games; let i=index">
     <!-- dichiaro che 'i' è il valore del numero di indece dell'array -->
-    <div></div>
-    <div>titolo : {{item.titolo}}</div>
-    <div>prezzo : {{item.prezzo}}</div>
+    <img class="image_games" src="{{item.id}}" alt="">
+
+    <div>titolo : {{item.name}}</div>
+    <div>descrizione : {{item.description}}</div>
+    <div>prezzo : {{item.price}}</div>
 
 </div>
