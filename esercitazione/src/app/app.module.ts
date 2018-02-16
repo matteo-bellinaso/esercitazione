@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ComunicatorService } from './comunicator.service';
 import { ListComponent } from './list/list.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ListComponent } from './list/list.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
