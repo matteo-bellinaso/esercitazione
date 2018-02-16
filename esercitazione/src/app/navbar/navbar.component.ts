@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {menuItem} from '../menuItem';
 import { ComunicatorService } from '../comunicator.service';
+import { Subject } from 'rxjs/Subject';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ComunicatorService } from '../comunicator.service';
 export class NavbarComponent implements OnInit {
 
   menuItems: menuItem[] = [
-    new menuItem("edit", 'Edit', true),
+    new menuItem("edit", 'Edit'),
     new menuItem("list", 'Lista'),
     new menuItem("home", 'Home')
   ];
@@ -22,8 +23,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-
-  
 
   selectSection(id:string){
 
@@ -38,6 +37,12 @@ export class NavbarComponent implements OnInit {
     });
 
     this.comunicatorService.setSelection(id);
+    
   }
+
+
+
+ 
+
 
 }
