@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { ComunicatorService } from './comunicator.service';
 import { ListComponent } from './list/list.component';
 import { FooterComponent } from './footer/footer.component';
+import { DetailComponent } from './detail/detail.component';
+import { GameListService } from './game-list.service';
 
 
 @NgModule({
@@ -16,12 +18,13 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     HomeComponent,
     ListComponent,
-    FooterComponent
+    FooterComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [ComunicatorService],
+  providers: [ComunicatorService, GameListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

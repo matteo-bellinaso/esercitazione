@@ -10,9 +10,10 @@ import { ComunicatorService } from '../comunicator.service';
 export class NavbarComponent implements OnInit {
 
   menuItems: menuItem[] = [
-    new menuItem("detail", 'Detail', true),
+    new menuItem("edit", 'Edit', true),
     new menuItem("list", 'Lista'),
-    new menuItem("home", 'Home')
+    new menuItem("home", 'Home'),
+    new menuItem("detail", "")
   ];
 
   constructor(private comunicatorService : ComunicatorService) { }

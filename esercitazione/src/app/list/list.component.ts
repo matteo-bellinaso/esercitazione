@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { listItem } from './listItem';
+import { ComunicatorService } from '../comunicator.service';
+import { GameListService } from '../game-list.service';
+
 
 @Component({
   selector: 'list',
@@ -9,18 +12,23 @@ import { listItem } from './listItem';
 export class ListComponent implements OnInit {
 
 
-  games : listItem[] = [
-
-    new listItem("../assets/cod.jpg","Call Of Duty","sparatutto","49.99"),
-    new listItem("../assets/shadow.png","Shadow of the Colossus","Avventura Fantasy","29.99"),
-    new listItem("../assets/batman.jpg","Batman Arkham Knight","avventura","39.99"),
-    new listItem("../assets/crash.png","Crash Bandicoot","avventura - platform","29.99")
-
-  ]
-
-  constructor() { }
+  gamesList : listItem[]; //gamesList è un array di oggetti listItem vuoti
+  
+  constructor(private gameListService : GameListService ) {} //richiamo il costruttore di gameList
+  
 
   ngOnInit() {
+   this.gamesList = this.gameListService.getGames(); //popolo la mia array usando un service;
+
   }
+
+  @Output("gameChanged")
+  selectGame: EventEmitter<string> = new EventEmitter()//dichiarazione emitter per passare il'id dell'oggetto da visualizzare
+
+  selectedGame(id:string){
+    this.selectGame.emit(id);
+
+  }
+
 
 }

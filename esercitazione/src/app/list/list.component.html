@@ -1,6 +1,6 @@
-<div class="gioco" *ngFor="let item of games; let i=index">
+<div class="gioco" *ngFor="let item of gamesList; let i=index" (click)="selectedGame(item.id)">
     <!-- dichiaro che 'i' è il valore del numero di indece dell'array -->
-    <img class="image_games" src="{{item.id}}" alt="">
+    <img class="image_games" src="{{item.url}}" alt="">
 
     <div>titolo : {{item.name}}</div>
     <div>descrizione : {{item.description}}</div>

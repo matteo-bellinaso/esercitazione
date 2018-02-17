@@ -8,11 +8,18 @@ import { ComunicatorService } from './comunicator.service';
 })
 export class AppComponent {
   currentSection  = 'home';
-
+  idSelected ;
   constructor(private headerService: ComunicatorService){
     this.headerService.sectionSelected$.subscribe(id=>{
       this.currentSection = id;
     });
+  }
+
+  setGameSelected(id: string){
+
+    this.idSelected = id;
+    this.currentSection = 'detail';
+
   }
 
 }

@@ -3,9 +3,13 @@
 
 <div [ngSwitch]="currentSection">
     <home *ngSwitchCase="'home'"></home>
-    <list *ngSwitchCase="'list'"></list>
+    <list *ngSwitchCase="'list'" (gameChanged)="setGameSelected($event)"></list>
+    <!--eventi sempre tra parentesi -->
+    <detail *ngSwitchCase="'detail'" [gameIdSelected]="idSelected"></detail>
+    <!-- property binding agganciata all'input -->
     <!-- <edit *ngSwitchCase="'edit'"></edit> -->
 </div>
+
 
 
 <footer></footer>
