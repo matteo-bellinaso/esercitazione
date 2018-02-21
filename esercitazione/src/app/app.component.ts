@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ComunicatorService } from './comunicator.service';
+import { GameListService } from './game-list.service';
+import { listItem } from './list/listItem';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,8 @@ import { ComunicatorService } from './comunicator.service';
 export class AppComponent {
   currentSection  = 'home';
   idSelected ;
-  constructor(private headerService: ComunicatorService){
+  
+  constructor(private headerService: ComunicatorService , private gameListService : GameListService){
     this.headerService.sectionSelected$.subscribe(id=>{
       this.currentSection = id;
     });
@@ -21,5 +25,13 @@ export class AppComponent {
     this.currentSection = 'detail';
 
   }
+
+
+editSelected;
+  setGameEdited(id: string){
+    this.editSelected = id;
+    this.currentSection = 'edit';
+  }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { ComunicatorService } from '../comunicator.service';
 import { GameListService } from '../game-list.service';
 import { listItem } from '../list/listItem';
@@ -21,7 +21,14 @@ export class DetailComponent implements OnInit {
   ngOnInit() { //le proprietà di input nel costruttore non va bene va usata in init perchè è il primo ng ad essere lanciato
 
     this.game = this.gamelistService.getGamesById(this.idSelected); //creo un oggetto listItem perchè gli devo passare l'oggetto corrente
+  }
 
+
+  @Output("gameEdit")
+  gameEdit: EventEmitter<string> = new EventEmitter()
+
+  setEditGame(id : string){
+    this.gameEdit.emit(id);
 
   }
 

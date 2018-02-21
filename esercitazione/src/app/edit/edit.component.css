@@ -14,7 +14,7 @@
     background-color: rgb(58, 58, 133);
     color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .buttonEdit {
@@ -27,4 +27,18 @@
 
 .textDetail {
     padding: 25px;
+}
+
+.cerca {
+    margin-left: 30%;
+    height: 30px;
+    width: 40%;
+    font-size: 30px;
+}
+
+.editText {
+    font-size: 20px;
+    color: rgb(75, 75, 243);
+    margin: 0 auto;
+    margin-bottom: 15px;
 }

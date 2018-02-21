@@ -10,6 +10,8 @@ import { ListComponent } from './list/list.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailComponent } from './detail/detail.component';
 import { GameListService } from './game-list.service';
+import { EditComponent } from './edit/edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,12 +21,13 @@ import { GameListService } from './game-list.service';
     HomeComponent,
     ListComponent,
     FooterComponent,
-    DetailComponent
+    DetailComponent,
+    EditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
-  providers: [ComunicatorService, GameListService],
+  providers: [ComunicatorService, GameListService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,9 +5,9 @@
     <home *ngSwitchCase="'home'"></home>
     <list *ngSwitchCase="'list'" (gameChanged)="setGameSelected($event)"></list>
     <!--eventi sempre tra parentesi -->
-    <detail *ngSwitchCase="'detail'" [gameIdSelected]="idSelected"></detail>
+    <detail *ngSwitchCase="'detail'" [gameIdSelected]="idSelected" (gameEdit)="setGameEdited($event)"></detail>
     <!-- property binding agganciata all'input -->
-    <!-- <edit *ngSwitchCase="'edit'"></edit> -->
+    <edit *ngSwitchCase="'edit'" [editSelected]="editSelected"></edit>
 </div>
 
 

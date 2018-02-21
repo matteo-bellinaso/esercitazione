@@ -1,0 +1,14 @@
+<input class="cerca" [(ngModel)]="value"> <button class="buttonEdit" (click)="cercaGame()"> cerca</button>
+
+
+<div class="detail" *ngIf="game">
+
+    <div class="image">
+        <img class="image_games" src="{{game.url}}" alt="">
+    </div>
+    <div>Titolo : {{game.name}}</div> <input class="editText" type="text" [(ngModel)]="valNome">
+    <div>Genere : {{game.description}}</div> <input class="editText" type="text" [(ngModel)]="valDes">
+    <div>Prezzo: {{game.price}}</div> <input class="editText" type="text" [(ngModel)]="valPrice"><br>
+
+    <button class="buttonEdit" (click)="editGame()"> conferma</button>
+</div>

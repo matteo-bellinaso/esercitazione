@@ -1,9 +1,14 @@
-<div *ngIf="game">
+<div class="detail" *ngIf="game">
 
     <div class="image">
         <img class="image_games" src="{{game.url}}" alt="">
     </div>
-    <div>titolo : {{game.name}}</div>
-    <div>titolo : {{game.description}}</div>
-    <div>prezzo: {{game.price}}</div>
+    <div>Titolo : {{game.name}}</div>
+    <div>Genere : {{game.description}}</div>
+    <div>Prezzo: {{game.price}}</div>
+
+    <div class="textDetail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam cumque doloribus animi expedita ipsa, nisi vel, explicabo labore repellat nam quo repellendus. Suscipit nihil quae placeat modi, eius voluptate unde laboriosam omnis sunt tempore illo?
+        Quod impedit possimus ipsam doloremque.</div>
+
+    <button class="buttonEdit" (click)="setEditGame(game.id)"> Edit</button>
 </div>

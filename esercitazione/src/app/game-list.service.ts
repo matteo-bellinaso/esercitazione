@@ -12,6 +12,7 @@ export class GameListService {
 
   ];
 
+
   getGames(){
 
     return this.games;
@@ -27,5 +28,18 @@ export class GameListService {
     }
     return null;
   }
+
+game : listItem;
+  
+  gameEditValue(id : string, nome : string, description : string, price : string){
+
+      this.game = this.getGamesById(id);
+
+     this.game.setName(nome);
+     this.game.setGenere(description);
+    this.game.setPrice(price);
+
+  }
+
 
 }

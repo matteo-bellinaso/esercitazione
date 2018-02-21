@@ -14,4 +14,14 @@ constructor(id : string,url:string ,name: string, description : string, price: s
     this.price = price;
 }
 
+
+setName(name){
+    this.name = name;
+}
+setGenere(description){
+this.description = description;
+}
+setPrice(price){
+    this.price = price;
+}
 }
