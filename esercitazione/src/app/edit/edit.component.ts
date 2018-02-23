@@ -3,6 +3,7 @@ import { GameListService } from '../game-list.service';
 import { listItem } from '../list/listItem';
 import { Listener } from 'selenium-webdriver';
 import {NgForm} from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'edit',
@@ -18,10 +19,19 @@ value: string;
 
 game : listItem;
 
-  constructor(private gameListService : GameListService) { }
+  constructor(private gameListService : GameListService, private router : ActivatedRoute) {
+    this.router.params.subscribe(params =>{
+      //params è il parametro per andare a prendere l'id passato nell'url da list component
+
+      if(params['id'] != '' && params['id'] != null ){ //controlla che il parametro passato non sia nullo o vuoto.
+        this.game = this.gameListService.getGamesById(params['id']);
+       
+      }
+    });
+   }
 
   ngOnInit() {
-    this.game = this.gameListService.getGamesById(this.editSelected);
+
 
   }
 

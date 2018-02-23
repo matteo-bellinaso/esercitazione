@@ -12,6 +12,7 @@ import { DetailComponent } from './detail/detail.component';
 import { GameListService } from './game-list.service';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { demoRouter } from './router.module';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule,  demoRouter
   ],
   providers: [ComunicatorService, GameListService ],
   bootstrap: [AppComponent]

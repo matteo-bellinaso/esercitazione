@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { listItem } from './listItem';
 import { ComunicatorService } from '../comunicator.service';
 import { GameListService } from '../game-list.service';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ListComponent implements OnInit {
 
   gamesList : listItem[]; //gamesList è un array di oggetti listItem vuoti
   
-  constructor(private gameListService : GameListService ) {} //richiamo il costruttore di gameList
+  constructor(private gameListService : GameListService, private router : Router ) {} //richiamo il costruttore di gameList
   
 
   ngOnInit() {
@@ -22,11 +23,13 @@ export class ListComponent implements OnInit {
 
   }
 
-  @Output("gameChanged")
-  selectGame: EventEmitter<string> = new EventEmitter()//dichiarazione emitter per passare il'id dell'oggetto da visualizzare
+ /*@Output("gameChanged")
+  selectGame: EventEmitter<string> = new EventEmitter()
+  //dichiarazione emitter per passare il'id dell'oggetto da visualizzare */
 
-  selectedGame(id:string){
-    this.selectGame.emit(id);
+  selectedGame(item : listItem){
+  
+    this.router.navigate(['/detail/'+item.id]);
 
   }
 
