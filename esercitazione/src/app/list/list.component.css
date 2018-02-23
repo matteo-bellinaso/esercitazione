@@ -9,6 +9,10 @@
     margin-left: 10%;
 }
 
+.gioco:hover {
+    cursor: pointer;
+}
+
 .image_games {
     width: 90%;
     height: 40%;

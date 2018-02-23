@@ -13,6 +13,8 @@ import { GameListService } from './game-list.service';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { demoRouter } from './router.module';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login.service';
 
 
 @NgModule({
@@ -23,12 +25,13 @@ import { demoRouter } from './router.module';
     ListComponent,
     FooterComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, FormsModule,  demoRouter
   ],
-  providers: [ComunicatorService, GameListService ],
+  providers: [ComunicatorService, GameListService , LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

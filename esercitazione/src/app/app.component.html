@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<navbar></navbar>
+<navbar *ngIf="logged"></navbar>
 <router-outlet></router-outlet>
 
 
@@ -13,4 +13,4 @@
 </div>
 -->
 
-<footer></footer>
+<footer *ngIf="logged"></footer>

@@ -25,6 +25,10 @@
     margin-bottom: 20px;
 }
 
+.buttonEdit:hover {
+    cursor: pointer;
+}
+
 .textDetail {
     padding: 25px;
 }

@@ -28,3 +28,7 @@
 .textDetail {
     padding: 25px;
 }
+
+.buttonEdit:hover {
+    cursor: pointer;
+}

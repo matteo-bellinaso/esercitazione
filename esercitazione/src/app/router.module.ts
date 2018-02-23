@@ -8,6 +8,7 @@ import { ListComponent } from './list/list.component';
 import { Router} from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { EditComponent } from './edit/edit.component';
+import { LoginComponent } from './login/login.component';
 
 const Routes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -15,7 +16,8 @@ const Routes: Routes = [
   {path: 'edit', component: EditComponent},
   { path: 'detail/:id',  component: DetailComponent },
   { path: 'edit/:id', component: EditComponent},
-  { path: "", redirectTo : "/home", pathMatch: 'full'},
+  { path: "login" , component: LoginComponent},
+  { path: "", redirectTo : "/login", pathMatch: 'full'},
   { path: '**', component: HomeComponent }
 ];
 

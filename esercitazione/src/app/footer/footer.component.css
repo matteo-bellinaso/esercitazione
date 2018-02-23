@@ -7,5 +7,8 @@
     height: 90px;
     color: white;
     background-color: rgb(58, 58, 133);
-    margin-top: 120px;
+}
+
+#footer {
+    margin-top: 150px;
 }
