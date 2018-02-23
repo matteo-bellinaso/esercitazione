@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { demoRouter } from './router.module';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
+import { AuthGuard } from './auth.guard';
+
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { LoginService } from './login.service';
   imports: [
     BrowserModule, FormsModule,  demoRouter
   ],
-  providers: [ComunicatorService, GameListService , LoginService],
+  providers: [ComunicatorService, GameListService , LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

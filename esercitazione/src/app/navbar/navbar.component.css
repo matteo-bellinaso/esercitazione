@@ -9,7 +9,6 @@
 
 .menu_voci {
     float: right;
-    list-style-type: none;
     height: 25px;
     margin-right: 5%;
     line-height: 25px;
@@ -25,4 +24,15 @@
     color: rgb(58, 58, 133);
     background-color: white;
     border-radius: 5px;
+}
+
+.menu_log {
+    float: right;
+    height: 25px;
+    margin-right: 5%;
+    line-height: 25px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10%;
+    color: white;
 }

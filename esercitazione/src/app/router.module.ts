@@ -9,13 +9,15 @@ import { Router} from '@angular/router';
 import { DetailComponent } from './detail/detail.component';
 import { EditComponent } from './edit/edit.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
+
 
 const Routes: Routes = [
-  { path: 'home',  component: HomeComponent },
-  { path: 'list',  component: ListComponent },
-  {path: 'edit', component: EditComponent},
-  { path: 'detail/:id',  component: DetailComponent },
-  { path: 'edit/:id', component: EditComponent},
+  { path: 'home',  component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'list',  component: ListComponent, canActivate: [AuthGuard] },
+  {path: 'edit', component: EditComponent, canActivate: [AuthGuard]},
+  { path: 'detail/:id',  component: DetailComponent,canActivate: [AuthGuard] },
+  { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard]},
   { path: "login" , component: LoginComponent},
   { path: "", redirectTo : "/login", pathMatch: 'full'},
   { path: '**', component: HomeComponent }

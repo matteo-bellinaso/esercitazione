@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {menuItem} from '../menuItem';
 import { ComunicatorService } from '../comunicator.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit {
     new menuItem("detail", "")
   ];
 
-  constructor(private comunicatorService : ComunicatorService) { }
+  constructor(private comunicatorService : ComunicatorService, private loginService : LoginService) { }
 
   ngOnInit() {
   }
@@ -36,4 +37,8 @@ export class NavbarComponent implements OnInit {
     this.comunicatorService.setSelection(id);
   }
 
+  loggOut(){
+this.loginService.logOut();
+
+  }
 }

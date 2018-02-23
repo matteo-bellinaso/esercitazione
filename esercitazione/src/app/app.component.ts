@@ -20,6 +20,7 @@ export class AppComponent {
               private gameListService : GameListService , 
               private loginService : LoginService,
               private router : Router){
+
     this.headerService.sectionSelected$.subscribe(id=>{
       this.currentSection = id;
     });
@@ -29,6 +30,7 @@ export class AppComponent {
       this.logged = logged;
     });
     //nel costruttore richiamiamo la funzione che mi mette in ascolto della funzione subscribe.
+
   }
 
   setGameSelected(id: string){
@@ -44,9 +46,7 @@ editSelected;
     this.editSelected = id;
     this.currentSection = 'edit';
   }
-
-
-  redirect : boolean;
+  
 
   
 }
