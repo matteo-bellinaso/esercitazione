@@ -20,7 +20,7 @@ const Routes: Routes = [
   { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard]},
   { path: "login" , component: LoginComponent},
   { path: "", redirectTo : "/login", pathMatch: 'full'},
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
