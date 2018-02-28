@@ -6,7 +6,7 @@ import { LoginService } from './login.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-  constructor(private user : LoginService ,private router : Router){ }
+  constructor(private loginService : LoginService ,private router : Router){ }
 
   utente : string;
   pass : string;
@@ -14,16 +14,15 @@ export class AuthGuard implements CanActivate {
   canActivate(){
     this.utente = sessionStorage.getItem("username");
     this.pass = sessionStorage.getItem("password");
-    console.log("check");
   
     if(this.utente == null && this.pass == null){
-        this.user.setLogged(false);
-        this.user.isLog(false);
+        this.loginService.setLogged(false);
+        this.loginService.isLog(false);
         this.router.navigate(['/login']);
 
       }else{
-        this.user.isLog(true);
-        this.user.setLogged(true);
+        this.loginService.isLog(true);
+        this.loginService.setLogged(true);
         return true;
       }
         

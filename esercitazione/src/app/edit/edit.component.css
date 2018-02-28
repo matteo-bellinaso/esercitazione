@@ -14,7 +14,8 @@
     background-color: rgb(58, 58, 133);
     color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
+    border-radius: 10px;
 }
 
 .buttonEdit {
@@ -40,9 +41,15 @@
     font-size: 30px;
 }
 
+.text {
+    float: left;
+    margin-left: 20%;
+}
+
 .editText {
-    font-size: 20px;
+    font-size: 25px;
     color: rgb(75, 75, 243);
     margin: 0 auto;
     margin-bottom: 15px;
+    margin-right: 5%;
 }

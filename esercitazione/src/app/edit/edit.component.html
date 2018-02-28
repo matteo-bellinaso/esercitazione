@@ -6,9 +6,9 @@
     <div class="image">
         <img class="image_games" src="{{game.url}}" alt="">
     </div>
-    <div>Titolo : {{game.name}}</div> <input class="editText" type="text" [(ngModel)]="valNome">
-    <div>Genere : {{game.description}}</div> <input class="editText" type="text" [(ngModel)]="valDes">
-    <div>Prezzo: {{game.price}}</div> <input class="editText" type="text" [(ngModel)]="valPrice"><br>
+    <div class="text">Titolo : {{game.name}}</div> <input class="editText" type="text" [(ngModel)]="valNome"> <br>
+    <div class="text">Genere : {{game.description}}</div> <input class="editText" type="text" [(ngModel)]="valDes"><br>
+    <div class="text">Prezzo: {{game.price}}</div> <input class="editText" type="text" [(ngModel)]="valPrice"><br>
 
     <button class="buttonEdit" (click)="editGame()"> conferma</button>
 </div>
