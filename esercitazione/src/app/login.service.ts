@@ -11,6 +11,7 @@ export class LoginService {
   //per inviare il valore booleano all'app-component.ts usiamo una subscribe, perchè cosi l'app component sta sempre in ascolto.
 
   public logged$ = this.logged.asObservable();
+  //variabile in ascolto in app.component
 
   isLog(boolean){
     return boolean;
@@ -19,6 +20,7 @@ export class LoginService {
   setLogged(value: boolean) {
     this.logged.next(value);
   }
+  //metodo per cambiare valore al logged.
 
   login(username: string, password: string) {
 
