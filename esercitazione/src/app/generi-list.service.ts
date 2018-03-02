@@ -9,6 +9,7 @@ export class GeneriListService {
 
   generi : genereItem[] = [
 
+    new genereItem(null, 'tutti'),
     new genereItem('01' , 'sparatutto'),
     new genereItem('02', 'platform'),
     new genereItem('03' , 'sport'),
@@ -26,4 +27,7 @@ export class GeneriListService {
     return null;
   }
 
+  getGeneri(){
+    return this.generi;
+  }
 }
