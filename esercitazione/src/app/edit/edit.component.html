@@ -10,5 +10,5 @@
     <div class="text">Genere : {{game.description}}</div> <input class="editText" type="text" [(ngModel)]="valDes"><br>
     <div class="text">Prezzo: {{game.price}}</div> <input class="editText" type="text" [(ngModel)]="valPrice"><br>
 
-    <button class="buttonEdit" (click)="editGame()"> conferma</button>
+    <button class="buttonEdit" (click)="editGame(game.id)"> conferma</button>
 </div>

@@ -6,12 +6,24 @@ import { LoginService } from './login.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-  constructor(private loginService : LoginService ,private router : Router){ }
+  
 
+  constructor(private loginService : LoginService ,private router : Router){ 
+   
+
+  }
+
+  currentUrl : string;
   utente : string;
   pass : string;
+  divieto : string = "edit"
+
+  
 
   canActivate(){
+
+    this.currentUrl = window.location.href;
+    
     this.utente = sessionStorage.getItem("username");
     this.pass = sessionStorage.getItem("password");
   
@@ -21,8 +33,16 @@ export class AuthGuard implements CanActivate {
         this.router.navigate(['/login']);
 
       }else{
+
+          
         this.loginService.isLog(true);
         this.loginService.setLogged(true);
+
+        if(this.utente != "admin" && this.currentUrl.indexOf(this.divieto) != -1){ 
+          //indexOf cerca nella stringa le lettere tra parentesi, se è -1 è false
+          this.router.navigate(['/home']);
+        }
+
         return true;
       }
         

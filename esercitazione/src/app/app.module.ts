@@ -16,6 +16,7 @@ import { demoRouter } from './router.module';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { AuthGuard } from './auth.guard';
+import { GeneriListService } from './generi-list.service';
 
 
 
@@ -33,7 +34,7 @@ import { AuthGuard } from './auth.guard';
   imports: [
     BrowserModule, FormsModule,  demoRouter
   ],
-  providers: [ComunicatorService, GameListService , LoginService, AuthGuard],
+  providers: [ComunicatorService, GameListService , LoginService, AuthGuard, GeneriListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

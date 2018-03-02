@@ -3,6 +3,7 @@ import { ComunicatorService } from '../comunicator.service';
 import { GameListService } from '../game-list.service';
 import { listItem } from '../list/listItem';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'detail',
@@ -16,8 +17,8 @@ export class DetailComponent implements OnInit {
   idSelected: string;
 
   game: listItem;// creo questa variabile perchè gli devo passare un oggetto listItem
-
-  constructor(private gamelistService : GameListService, private router : ActivatedRoute, private routes : Router ) { 
+  admin : boolean;
+  constructor(private gamelistService : GameListService, private router : ActivatedRoute, private routes : Router , private loginService : LoginService) { 
 
     this.router.params.subscribe(params =>{
       //params è il parametro per andare a prendere l'id passato nell'url da list component
@@ -25,7 +26,13 @@ export class DetailComponent implements OnInit {
       if(params['id'] != '' && params['id'] != null ){ //controlla che il parametro passato non sia nullo o vuoto.
         this.game = this.gamelistService.getGamesById(params['id']);
       }
+
+      if(sessionStorage.getItem("username") == "admin"){
+        this.admin = true;
+      }
     });
+
+   
 
   }//service list
 

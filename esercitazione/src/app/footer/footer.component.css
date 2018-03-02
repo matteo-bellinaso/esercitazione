@@ -1,15 +1,7 @@
-.text {
-    width: 30.17%;
-    float: left;
-    font-size: 20px;
-    text-align: center;
-    padding: 20px;
-    height: 90px;
-    color: white;
-    background-color: rgb(58, 58, 133);
-    margin-top: 200px;
-}
-
 #footer {
     margin-top: 200px;
+    width: 100%;
+    background-color: rgb(58, 58, 133);
+    height: 90px;
+    float: right;
 }

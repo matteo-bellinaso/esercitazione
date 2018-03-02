@@ -17,9 +17,19 @@ export class NavbarComponent implements OnInit {
     new menuItem("detail", "")
   ];
 
-  constructor(private comunicatorService : ComunicatorService, private loginService : LoginService) { }
+  userLogged : string
+  admin : boolean;
+
+  constructor(private comunicatorService : ComunicatorService, private loginService : LoginService) {
+    if(sessionStorage.getItem("username") == "admin"){
+      this.admin = true;
+    }
+
+   }
 
   ngOnInit() {
+      this.userLogged = sessionStorage.getItem("username");
+
   }
   //modifica
   selectSection(id:string){
@@ -38,7 +48,13 @@ export class NavbarComponent implements OnInit {
   }
 
   loggOut(){
-this.loginService.logOut();
+  this.loginService.logOut();
 
   }
+
+  
+  
+  
+
+
 }

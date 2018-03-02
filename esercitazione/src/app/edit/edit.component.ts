@@ -12,10 +12,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  
 @Input('editSelected')
 editSelected: string;
-value: string;
+value : string;
 
 game : listItem;
 
@@ -40,16 +39,16 @@ game : listItem;
 
   cercaGame(){
   
-  this.game = this.gameListService.getGamesById(this.value);
+  this.game = this.gameListService.getGamesByName(this.value);
   }
 
   valNome : string;
   valDes: string;
   valPrice: string;
 
-  editGame(){
+  editGame(id : string){
   
-  this.gameListService.gameEditValue(this.value, this.valNome, this.valDes, this.valPrice);
+  this.gameListService.gameEditValue(id, this.valNome, this.valDes, this.valPrice);
 
   }
   

@@ -36,3 +36,8 @@
     border-radius: 10%;
     color: white;
 }
+
+.user {
+    line-height: 90px;
+    margin-left: 20px;
+}

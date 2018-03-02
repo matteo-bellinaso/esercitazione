@@ -1,3 +1,4 @@
+
 export class listItem{
 
     id : string;
@@ -24,4 +25,5 @@ this.description = description;
 setPrice(price){
     this.price = price;
 }
+
 }

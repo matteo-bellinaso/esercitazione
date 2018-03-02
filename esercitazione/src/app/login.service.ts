@@ -26,11 +26,14 @@ export class LoginService {
 
     if (password != "" && password != null && username != "" && username != null) {
 
+      
+
       sessionStorage.setItem("username",username);
       sessionStorage.setItem("password",password);
 
       this.isLog(true);
       this.setLogged(true);
+      
       this.router.navigate(['/home']);
 
 
@@ -40,10 +43,8 @@ export class LoginService {
     }
 
   }
-  checkUser: string;
-  checkPass: string;
-
   
+
 
   
 
