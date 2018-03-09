@@ -5,6 +5,7 @@ import { GameListService } from '../game-list.service';
 import { Router} from '@angular/router';
 import { GeneriListService } from '../generi-list.service';
 import { genereItem } from '../genereItem';
+import { DatePipe, CurrencyPipe } from '@angular/common';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ListComponent implements OnInit {
 
 
   gamesList : listItem[]; //gamesList è un array di oggetti listItem vuoti
-  value : string = 'tutti';
+  select : string = 'tutti';
 
 
   constructor(private gameListService : GameListService, private router : Router, private generiListService : GeneriListService ) {} //richiamo il costruttore di gameList

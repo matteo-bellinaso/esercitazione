@@ -1,7 +1,7 @@
 <div class="boxSelection">
 
     <p>Seleziona il genere</p>
-    <select [(ngModel)]="value" id="selection">
+    <select [(ngModel)]="select" id="selection">
        <option *ngFor="let genere of generi"> {{genere.description}}</option>
    
     </select>
@@ -9,15 +9,15 @@
 
 
 <ng-container *ngFor="let item of gamesList; let i=index">
-    <div *ngIf="value == 'tutti' || item.description == value">
+    <ng-container *ngIf="select == 'tutti' || item.description == select">
         <div class="gioco" (click)="selectedGame(item)">
-            <!-- dichiaro che 'i' è il valore del numero di indece dell'array -->
+
             <img class="image_games" src="{{item.url}}" alt="">
 
             <div class="text">titolo : {{item.name}}</div>
-            <div class="text">descrizione : {{item.description}}</div>
-            <div class="text">prezzo : {{item.price}}</div>
-
+            <div class="text">genere : {{item.description}}</div>
+            <div class="text">prezzo : {{item.price | currency}} </div>
+            <div class="text">data di rilascio: {{item.release | date:'MM/dd/yy'}}</div>
         </div>
-    </div>
+    </ng-container>
 </ng-container>
