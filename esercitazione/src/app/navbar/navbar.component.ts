@@ -10,13 +10,6 @@ import { LoginService } from '../login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  menuItems: menuItem[] = [
-    new menuItem("edit", 'Edit'),
-    new menuItem("list", 'Lista'),
-    new menuItem("home", 'Home'),
-    new menuItem("detail", "")
-  ];
-
   userLogged : string
   admin : boolean;
 
@@ -32,7 +25,7 @@ export class NavbarComponent implements OnInit {
 
   }
   //modifica
-  selectSection(id:string){
+ /* selectSection(id:string){
 
     this.menuItems.forEach(item => {
 
@@ -42,11 +35,11 @@ export class NavbarComponent implements OnInit {
         item.selected = false;
       }
       
-    });
+    });*/
 
-    this.comunicatorService.setSelection(id);
+   /* this.comunicatorService.setSelection(id);
     
-  }
+  }*/
 
   loggOut(){
   this.loginService.logOut();
