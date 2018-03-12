@@ -1,0 +1,57 @@
+.gioco {
+    background-color: rgb(58, 58, 133);
+    color: white;
+    margin: 20px;
+    padding: 20px;
+    width: 30%;
+    height: 400px;
+    font-size: 30px;
+    float: left;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+
+.gioco:hover {
+    cursor: pointer;
+}
+
+.image_games {
+    width: 90%;
+    height: 181px;
+    margin-left: 5%;
+}
+
+.text {
+    padding: 7px;
+}
+
+.boxSelection {
+    width: 30%;
+    margin-left: 35%;
+    background-color: rgb(58, 58, 133);
+    padding: 15px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.boxSelection p {
+    float: left;
+}
+
+#selection {
+    float: right;
+    font-size: 20px;
+    padding: 15px;
+    margin-top: 12px;
+    color: rgb(58, 58, 133);
+}
+
+@media(max-width:600px) {
+    .gioco {
+        width: 80%;
+        margin-left: 5%;
+    }
+}

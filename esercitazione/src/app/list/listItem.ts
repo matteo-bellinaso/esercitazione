@@ -15,7 +15,7 @@ constructor(id : string,url:string ,name: string, description : string, price: s
     this.name = name;
     this.description = description;
     this.price = price;
-    this.release = release;1
+    this.release = release;
     this.releasePicker = { date: { year: release.getFullYear(), month: release.getMonth()+1, day: release.getDate() } };
 }
 

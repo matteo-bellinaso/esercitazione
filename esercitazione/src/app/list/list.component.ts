@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { listItem } from './listItem';
+import { ComunicatorService } from '../comunicator.service';
+import { GameListService } from '../game-list.service';
+import { Router} from '@angular/router';
+import { GeneriListService } from '../generi-list.service';
+import { genereItem } from '../genereItem';
+import { DatePipe, CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'list',
@@ -8,19 +15,25 @@ import { listItem } from './listItem';
 })
 export class ListComponent implements OnInit {
 
-games : listItem[]=[
 
-  new listItem("cod","Call of Duty", "sparatutto","49.99"),
-  new listItem("lol","League of Legends", "MOBA", "29.99"),
-  new listItem("bat","Batman Arkham Knight","avventura","44.99"),
-  new listItem("crash","Crash Bandicoot","avventura","39.99")
-
-]
+  gamesList : listItem[]; //gamesList è un array di oggetti listItem vuoti
+  select : string = 'tutti';
 
 
-  constructor() { }
+  constructor(private gameListService : GameListService, private router : Router, private generiListService : GeneriListService ) {} //richiamo il costruttore di gameList
+  
+    generi : genereItem[];
 
   ngOnInit() {
+   this.gamesList = this.gameListService.getGames(); //popolo la mia array usando un service;
+   this.generi = this.generiListService.getGeneri();
+
   }
+
+  selectedGame(item : listItem){
+    this.router.navigate(['/detail/'+item.id]);
+
+  }
+
 
 }

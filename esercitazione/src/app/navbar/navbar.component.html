@@ -1,3 +1,8 @@
 <div id="navbar">
-    <div class="menu_voci" *ngFor="let item of menuItems" (click)="selectSection(item.id)" [class.selected]="item.selected">{{item.description}}</div>
+    <div class="menu_log" routerLink="login" (click)="loggOut()">Log Out</div>
+    <div class="menu_voci" *ngIf="admin" routerLink="edit" routerLinkActive="seleted">Edit</div>
+    <div class="menu_voci" routerLink="list" routerLinkActive="seleted">List</div>
+    <div class="menu_voci" routerLink="home" routerLinkActive="seleted">Home</div>
+    <div class="user">Benvenuto, {{userLogged}}</div>
+
 </div>

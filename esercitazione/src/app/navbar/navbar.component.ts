@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {menuItem} from '../menuItem';
 import { ComunicatorService } from '../comunicator.service';
-import { Subject } from 'rxjs/Subject';
-
-//GRegreg
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'navbar',
@@ -12,20 +10,22 @@ import { Subject } from 'rxjs/Subject';
 })
 export class NavbarComponent implements OnInit {
 
-  menuItems: menuItem[] = [
-    new menuItem("edit", 'Edit'),
-    new menuItem("list", 'Lista'),
-    new menuItem("home", 'Home')
-  ];
+  userLogged : string
+  admin : boolean;
 
+  constructor(private comunicatorService : ComunicatorService, private loginService : LoginService) {
+    if(sessionStorage.getItem("username") == "admin"){
+      this.admin = true;
+    }
 
-  constructor(private comunicatorService : ComunicatorService) { }
+   }
 
   ngOnInit() {
+      this.userLogged = sessionStorage.getItem("username");
+
   }
-
-
-  selectSection(id:string){
+  //modifica
+ /* selectSection(id:string){
 
     this.menuItems.forEach(item => {
 
@@ -35,15 +35,20 @@ export class NavbarComponent implements OnInit {
         item.selected = false;
       }
       
-    });
+    });*/
 
-    this.comunicatorService.setSelection(id);
+   /* this.comunicatorService.setSelection(id);
     
+  }*/
+
+  loggOut(){
+  this.loginService.logOut();
+
   }
 
-
-
- 
+  
+  
+  
 
 
 }
