@@ -5,29 +5,26 @@
         <img class="image_games" src="{{game.url}}" alt="">
     </div>
 
-    <form #gameForm="ngForm" (ngSubmit)="editGame()">
-        <div class="form-group text">
+    <form [formGroup]="gameForm" (ngSubmit)="editGame()">
+
+        <div class="text form-group">
             <label for="titolo">Titolo: </label>
-            <input class="editText form-control" id="titolo" type="text" required [(ngModel)]="game.name" name="titolo" #titolo="ngModel">
-            <div [hidden]="titolo.valid" class="required">Titolo è obbligatorio</div>
+            <input class="editText form-control" formControlName="titolo">
         </div>
-
-        <div class="form-group text">
+        <div class="text form-group">
             <label for="description">Genere: </label>
-            <input class="editText form-control" id="description" type="text" required [(ngModel)]="game.description" name="description" #description="ngModel">
-            <div [hidden]="description.valid" class="required">Genere è obbligatorio</div>
-        </div>
+            <input class="editText form-control" formControlName="description">
 
-        <div class="form-group text">
-            <label for="price">Price: </label>
-            <input class="editText form-control" id="price" type="text" required [(ngModel)]="game.price" name="price" #price="ngModel">
-            <div [hidden]="price.valid" class="required">il Prezzo è obbligatorio</div>
         </div>
+        <div class="text form-group">
+            <label for="price">Prezzo: </label>
+            <input class="editText form-control" formControlName="price">
 
+        </div>
 
         <div class="form-group datapicker">
             <label for="release">Release: </label>
-            <my-date-picker class="editText form-control" [options]="myDatePickerOptions" id="releasePicker" [(ngModel)]="game.releasePicker" name="releasePicker" #releasePicker="ngModel"></my-date-picker>
+            <my-date-picker class="editText form-control" [options]="myDatePickerOptions" formControlName="releasePicker" id="releasePicker"></my-date-picker>
         </div>
         <button class="buttonEdit" type="submit"> conferma</button>
     </form>

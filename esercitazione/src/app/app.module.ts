@@ -32,7 +32,7 @@ import { MyDatePickerModule } from 'mydatepicker';
     LoginComponent
   ],
   imports: [
-    BrowserModule, FormsModule,  demoRouter, MyDatePickerModule
+    BrowserModule, ReactiveFormsModule,  demoRouter, MyDatePickerModule, FormsModule
   ],
   providers: [ComunicatorService, GameListService , LoginService, AuthGuard, GeneriListService],
   bootstrap: [AppComponent]

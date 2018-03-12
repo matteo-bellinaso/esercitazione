@@ -55,7 +55,7 @@ getGamesByName(value : string){
 
 game : listItem;
   
-  gameEditValue(game: listItem){
+  /*gameEditValue(game: listItem){
 
       this.game = this.getGamesById(game.id);
       console.log(this.game);
@@ -63,8 +63,14 @@ game : listItem;
      this.game.setGenere(game.description);
      this.game.setPrice(game.price);
 
-  }
+  }*/
 
+gameEditReact(id: string, name : string, genere : string, price: string){
+  this.game = this.getGamesById(id);
+  this.game.setName(name);
+  this.game.setGenere(genere);
+  this.game.setPrice(price);
 
+}
 
 }
