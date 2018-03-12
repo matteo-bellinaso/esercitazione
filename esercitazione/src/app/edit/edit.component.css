@@ -53,3 +53,11 @@
     width: 40%;
     margin-left: 30%;
 }
+
+.required {
+    background-color: rgb(219, 92, 92);
+    border: red 0.5px solid;
+    margin-bottom: 5px;
+    width: 40%;
+    margin-left: 30%;
+}
