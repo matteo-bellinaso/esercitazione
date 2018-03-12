@@ -4,6 +4,7 @@ import { listItem } from '../list/listItem';
 import { Listener } from 'selenium-webdriver';
 import {NgForm} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import {IMyDpOptions, IMyDate} from 'mydatepicker';
 
 @Component({
   selector: 'edit',
@@ -12,17 +13,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'dd-mm-yyyy',
+};
+
 @Input('editSelected')
 editSelected: string;
 value : string;
 
 game : listItem;
 
-  constructor(private gameListService : GameListService, private router : ActivatedRoute) {
+  constructor(private gameListService : GameListService, private router : ActivatedRoute, private routes : Router) {
     this.router.params.subscribe(params =>{
-      //params è il parametro per andare a prendere l'id passato nell'url da list component
 
-      if(params['id'] != '' && params['id'] != null ){ //controlla che il parametro passato non sia nullo o vuoto.
+      if(params['id'] != '' && params['id'] != null ){ 
         this.game = this.gameListService.getGamesById(params['id']);
        
       }
@@ -31,25 +36,20 @@ game : listItem;
 
   ngOnInit() {
 
-
   }
-
-
-
 
   cercaGame(){
   
   this.game = this.gameListService.getGamesByName(this.value);
   }
 
-  valNome : string;
-  valDes: string;
-  valPrice: string;
-
-  editGame(id : string){
-  
-  this.gameListService.gameEditValue(id, this.valNome, this.valDes, this.valPrice);
-
+  editGame(){
+    let pickerDate: IMyDate = this.game.releasePicker.date; 
+    //in questo modo gli restituico l'oggetto picker, perchè vuole un oggetto data
+    this.game.release = new Date(pickerDate.year, pickerDate.month-1, pickerDate.day);
+    this.gameListService.gameEditValue(this.game);
+    this.routes.navigate(['/detail/'+this.game.id]);
   }
-  
+
+
 }

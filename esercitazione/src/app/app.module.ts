@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { AuthGuard } from './auth.guard';
 import { GeneriListService } from './generi-list.service';
-
+import { MyDatePickerModule } from 'mydatepicker';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { GeneriListService } from './generi-list.service';
     LoginComponent
   ],
   imports: [
-    BrowserModule, FormsModule,  demoRouter
+    BrowserModule, FormsModule,  demoRouter, MyDatePickerModule
   ],
   providers: [ComunicatorService, GameListService , LoginService, AuthGuard, GeneriListService],
   bootstrap: [AppComponent]

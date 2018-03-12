@@ -1,14 +1,34 @@
 <input class="cerca" [(ngModel)]="value"> <button class="buttonEdit" (click)="cercaGame()"> cerca</button><br>
-
-
 <div class="detail" *ngIf="game">
 
     <div class="image">
         <img class="image_games" src="{{game.url}}" alt="">
     </div>
-    <div class="text">Titolo : {{game.name}}</div> <input class="editText" type="text" [(ngModel)]="valNome"> <br>
-    <div class="text">Genere : {{game.description}}</div> <input class="editText" type="text" [(ngModel)]="valDes"><br>
-    <div class="text">Prezzo: {{game.price}}</div> <input class="editText" type="text" [(ngModel)]="valPrice"><br>
 
-    <button class="buttonEdit" (click)="editGame(game.id)"> conferma</button>
+    <form #gameForm="ngForm" (ngSubmit)="editGame()">
+        <div class="form-group text">
+            <label for="titolo">Titolo: </label>
+            <input class="editText form-control" id="titolo" type="text" [(ngModel)]="game.name" name="titolo" #titolo="ngModel">
+        </div>
+
+        <div class="form-group text">
+            <label for="description">Genere: </label>
+            <input class="editText form-control" id="description" type="text" [(ngModel)]="game.description" name="description" #description="ngModel">
+        </div>
+
+        <div class="form-group text">
+            <label for="price">Price: </label>
+            <input class="editText form-control" id="price" type="text" [(ngModel)]="game.price" name="price" #price="ngModel">
+        </div>
+
+
+        <div class="form-group datapicker">
+            <label for="release">Release: </label>
+            <my-date-picker class="editText form-control" [options]="myDatePickerOptions" id="releasePicker" [(ngModel)]="game.releasePicker" name="releasePicker" #releasePicker="ngModel"></my-date-picker>
+        </div>
+        <button class="buttonEdit" type="submit"> conferma</button>
+    </form>
+
+
+
 </div>

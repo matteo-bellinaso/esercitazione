@@ -41,15 +41,15 @@
     font-size: 30px;
 }
 
-.text {
-    float: left;
-    margin-left: 20%;
-}
-
 .editText {
     font-size: 25px;
     color: rgb(75, 75, 243);
     margin: 0 auto;
     margin-bottom: 15px;
     margin-right: 5%;
+}
+
+.datapicker {
+    width: 40%;
+    margin-left: 30%;
 }
