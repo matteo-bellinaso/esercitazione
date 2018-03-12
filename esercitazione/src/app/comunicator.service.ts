@@ -6,13 +6,13 @@ import { Subject } from 'rxjs/Subject';
 export class ComunicatorService {
 
 
-private sectionSelected: Subject<string> = new Subject<string>();
+    private sectionSelected: Subject<string> = new Subject<string>();
   
-public sectionSelected$ = this.sectionSelected.asObservable();
+    public sectionSelected$ = this.sectionSelected.asObservable();
   
-public  setSelection(id : string) {  //gli passa il valore cliccato sulla lista, li carica su mySubject
-    this.sectionSelected.next(id);
-   }
+    public  setSelection(id : string) {  //gli passa il valore cliccato sulla lista, li carica su mySubject
+        this.sectionSelected.next(id);
+    }
 
 
 }

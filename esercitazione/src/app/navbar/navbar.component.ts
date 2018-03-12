@@ -11,7 +11,7 @@ import { LoginService } from '../login.service';
 export class NavbarComponent implements OnInit {
 
   menuItems: menuItem[] = [
-    new menuItem("edit", 'Edit', true),
+    new menuItem("edit", 'Edit'),
     new menuItem("list", 'Lista'),
     new menuItem("home", 'Home'),
     new menuItem("detail", "")
@@ -45,6 +45,7 @@ export class NavbarComponent implements OnInit {
     });
 
     this.comunicatorService.setSelection(id);
+    
   }
 
   loggOut(){
