@@ -32,7 +32,7 @@ export class GameListService {
   getGames(){
     return this.games;
   }
-
+//prvoa
   getGamesById(id:string): listItem{
     for(let item of this.games)
     {
