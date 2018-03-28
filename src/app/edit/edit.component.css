@@ -1,0 +1,63 @@
+.image img {
+    width: 80%;
+    margin-top: 40px;
+}
+
+.image {
+    margin-bottom: 30px;
+}
+
+.detail {
+    margin-top: 100px;
+    margin-left: 15%;
+    width: 70%;
+    background-color: rgb(58, 58, 133);
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+.buttonEdit {
+    padding: 10px;
+    color: white;
+    background-color: rgb(75, 75, 243);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.buttonEdit:hover {
+    cursor: pointer;
+}
+
+.textDetail {
+    padding: 25px;
+}
+
+.cerca {
+    margin-left: 30%;
+    height: 30px;
+    width: 30%;
+    font-size: 30px;
+}
+
+.editText {
+    font-size: 25px;
+    color: rgb(75, 75, 243);
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-right: 5%;
+}
+
+.datapicker {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.required {
+    background-color: rgb(219, 92, 92);
+    border: red 0.5px solid;
+    margin-bottom: 5px;
+    width: 40%;
+    margin-left: 30%;
+}

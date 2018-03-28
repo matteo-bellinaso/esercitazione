@@ -1,0 +1,34 @@
+<input class="cerca" [(ngModel)]="value"> <button class="buttonEdit" (click)="cercaGame()"> cerca</button><br>
+<div class="detail" *ngIf="game">
+
+    <div class="image">
+        <img class="image_games" src="{{game.url}}" alt="">
+    </div>
+
+    <form [formGroup]="gameForm" (ngSubmit)="editGame()">
+
+        <div class="text form-group">
+            <label for="titolo">Titolo: </label>
+            <input class="editText form-control" formControlName="titolo">
+        </div>
+        <div class="text form-group">
+            <label for="description">Genere: </label>
+            <input class="editText form-control" formControlName="description">
+
+        </div>
+        <div class="text form-group">
+            <label for="price">Prezzo: </label>
+            <input class="editText form-control" formControlName="price">
+
+        </div>
+
+        <div class="form-group datapicker">
+            <label for="release">Release: </label>
+            <my-date-picker class="editText form-control" [options]="myDatePickerOptions" formControlName="releasePicker" id="releasePicker"></my-date-picker>
+        </div>
+        <button class="buttonEdit" type="submit"> conferma</button>
+    </form>
+
+
+
+</div>

@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<navbar *ngIf="logged"></navbar>
+<router-outlet></router-outlet>
+
+
+
+<!-- <div [ngSwitch]="currentSection">
+    <home *ngSwitchCase="'home'"></home>
+    <list *ngSwitchCase="'list'" (gameChanged)="setGameSelected($event)"></list>
+   
+    <detail *ngSwitchCase="'detail'" [gameIdSelected]="idSelected" (gameEdit)="setGameEdited($event)"></detail>
+    <edit *ngSwitchCase="'edit'" [editSelected]="editSelected"></edit>
+</div>
+-->
+
+<footer *ngIf="logged"></footer>

@@ -1,0 +1,35 @@
+.image img {
+    width: 80%;
+    margin-top: 40px;
+}
+
+.image {
+    margin-bottom: 30px;
+}
+
+.detail {
+    margin-top: 100px;
+    margin-left: 15%;
+    width: 70%;
+    background-color: rgb(58, 58, 133);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.buttonEdit {
+    padding: 10px;
+    color: white;
+    background-color: rgb(75, 75, 243);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.textDetail {
+    padding: 25px;
+}
+
+.buttonEdit:hover {
+    cursor: pointer;
+}

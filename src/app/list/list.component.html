@@ -1,0 +1,23 @@
+<div class="boxSelection">
+
+    <p>Seleziona il genere</p>
+    <select [(ngModel)]="select" id="selection">
+       <option *ngFor="let genere of generi"> {{genere.description}}</option>
+   
+    </select>
+</div>
+
+
+<ng-container *ngFor="let item of gamesList; let i=index">
+    <ng-container *ngIf="select == 'tutti' || item.description == select">
+        <div class="gioco" (click)="selectedGame(item)">
+
+            <img class="image_games" src="{{item.url}}" alt="">
+
+            <div class="text">titolo : {{item.name}}</div>
+            <div class="text">genere : {{item.description}}</div>
+            <div class="text">prezzo : {{item.price | currency}} </div>
+            <div class="text">data di rilascio: {{item.release | date:'dd/MM/yy'}}</div>
+        </div>
+    </ng-container>
+</ng-container>
